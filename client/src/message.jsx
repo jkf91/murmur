@@ -44,40 +44,47 @@ var Message = React.createClass({
 
   render: function() {
     return (
-      <div className="jumbotron" id={ this.props.messageId }>
-        <img src="./src/img/glyphicons-601-chevron-up.png" style={ this.styles.arrows } alt="Up Vote" onClick={ this.upVote }/>
-        <img src="./src/img/glyphicons-602-chevron-down.png" style={ this.styles.arrows } alt="Down Vote" onClick={ this.downVote }/>
-        <div style={ this.styles.votes }>
-          { this.props.votes }
+      <div className="jumbotron" id={ this.props.messageId } >
+        <div className="col-xs-10" style={{ marginBottom: '20px'}}>
+          <p style={{fontWeight: "bold"}}>
+            { this.props.message }
+          </p>
         </div>
-        <div style={ this.styles.messageBox }>
-          { this.props.message }
+        <div className="votes col-xs-2" style={ this.styles.votes }>
+          <img src="./src/img/glyphicons-601-chevron-up.png" style={ this.styles.arrows } alt="Up Vote" onClick={ this.upVote }/>
+          <span className="count"> { this.props.votes } </span>
+          <img src="./src/img/glyphicons-602-chevron-down.png" style={ this.styles.arrows } alt="Down Vote" onClick={ this.downVote }/>
         </div>
-        <div style={ this.styles.timestamp }>
-          { moment(this.props.timestamp).fromNow() }
+        <div className="col-xs-12">
+          <div style={ this.styles.timestamp }>
+            <img src="./src/img/clock.png"/>
+            <span style={{fontStyle: "italic"}}>
+              { moment(this.props.timestamp).fromNow() }
+            </span>
+          </div>
+          <div style={ this.styles.comments }>
+            <img src="./src/img/comments.png"/>
+            <span style={{fontStyle: "italic"}}> 24 comments </span>
+          </div>
         </div>
-        <img src="./src/img/glyphicons-151-edit.png"
-          alt="Post a Comment"
-          onClick={ this.toggleCommentBoxDisplay }
-          style={ this.styles.writeButton }/>
-        { this.state.commentBoxDisplay ? <CommentBox messageId={ this.props.messageId }/> : <div/>}
       </div>
     )
   },
 
   styles: {
-    messageBox: {
-    },
     timestamp: {
+      float: "left"
     },
     votes: {
       float: "right",
       fontSize: "30px",
     },
-    writeButton: {
-      float: "left",
+    comments: {
+      float: "left"
+    },
+    commentButton: {
       position: "relative",
-      top: "4px"
+      top: "-3px"
     },
     arrows: {
       float: "right"

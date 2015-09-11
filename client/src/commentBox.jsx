@@ -36,10 +36,11 @@ var commentBox = React.createClass({
   // two-way binding inputbox's value and this.state.message
   render: function() {
     return (
-        <form>
-          <input type="text" onChange={this.handleChange} value={this.state.comment}/>
-          <button onClick={this.handleClick}>Submit</button>
-        </form>
+        <div/>
+        // <form>
+        //   <input type="text" onChange={this.handleChange} value={this.state.comment}/>
+        //   <button onClick={this.handleClick}>Submit</button>
+        // </form>
     )
   }
 });
