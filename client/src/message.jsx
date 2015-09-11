@@ -51,9 +51,11 @@ var Message = React.createClass({
           </p>
         </div>
         <div className="votes col-xs-2" style={ this.styles.votes }>
-          <img src="./src/img/glyphicons-601-chevron-up.png" style={ this.styles.arrows } alt="Up Vote" onClick={ this.upVote }/>
-          <span className="count"> { this.props.votes } </span>
-          <img src="./src/img/glyphicons-602-chevron-down.png" style={ this.styles.arrows } alt="Down Vote" onClick={ this.downVote }/>
+          <div style={ this.styles.voteContainer }>
+            <img src="./src/img/glyphicons-601-chevron-up.png" style={ this.styles.arrows } alt="Up Vote" onClick={ this.upVote }/>
+            <span className="count"> { this.props.votes } </span>
+            <img src="./src/img/glyphicons-602-chevron-down.png" style={ this.styles.arrows } alt="Down Vote" onClick={ this.downVote }/>
+          </div>
         </div>
         <div className="col-xs-12">
           <div style={ this.styles.timestamp }>
@@ -86,8 +88,11 @@ var Message = React.createClass({
       position: "relative",
       top: "-3px"
     },
+    voteContainer: {
+      width: "20px"
+    },
     arrows: {
-      float: "right"
+      // float: "right"
     }
   }
 });
