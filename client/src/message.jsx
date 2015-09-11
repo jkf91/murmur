@@ -45,28 +45,30 @@ var Message = React.createClass({
   render: function() {
     return (
       <div className="jumbotron" id={ this.props.messageId } >
-        <div className="col-xs-10" style={{ marginBottom: '20px'}}>
-          <p style={{fontWeight: "bold"}}>
-            { this.props.message }
-          </p>
-        </div>
-        <div className="votes col-xs-2" style={ this.styles.votes }>
-          <div style={ this.styles.voteContainer }>
-            <img src="./src/img/glyphicons-601-chevron-up.png" style={ this.styles.arrows } alt="Up Vote" onClick={ this.upVote }/>
-            <span className="count"> { this.props.votes } </span>
-            <img src="./src/img/glyphicons-602-chevron-down.png" style={ this.styles.arrows } alt="Down Vote" onClick={ this.downVote }/>
+        <div className="container">
+          <div className="col-xs-10" style={{ marginBottom: '20px'}}>
+            <p style={{fontWeight: "bold"}}>
+              { this.props.message }
+            </p>
           </div>
-        </div>
-        <div className="col-xs-12">
-          <div style={ this.styles.timestamp }>
-            <img src="./src/img/clock.png"/>
-            <span style={{fontStyle: "italic"}}>
-              { moment(this.props.timestamp).fromNow() }
-            </span>
+          <div className="votes col-xs-2" style={ this.styles.votes }>
+            <div style={ this.styles.voteContainer }>
+              <img src="./src/img/glyphicons-601-chevron-up.png" style={ this.styles.arrows } alt="Up Vote" onClick={ this.upVote }/>
+              <span className="count"> { this.props.votes } </span>
+              <img src="./src/img/glyphicons-602-chevron-down.png" style={ this.styles.arrows } alt="Down Vote" onClick={ this.downVote }/>
+            </div>
           </div>
-          <div style={ this.styles.comments }>
-            <img src="./src/img/comments.png"/>
-            <span style={{fontStyle: "italic"}}> 24 comments </span>
+          <div className="col-xs-12">
+            <div style={ this.styles.timestamp }>
+              <img src="./src/img/clock.png"/>
+              <span style={{fontStyle: "italic"}}>
+                { moment(this.props.timestamp).fromNow() }
+              </span>
+            </div>
+            <div style={ this.styles.comments }>
+              <img src="./src/img/comments.png"/>
+              <span style={{fontStyle: "italic"}}> 24 comments </span>
+            </div>
           </div>
         </div>
       </div>
