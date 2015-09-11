@@ -60,13 +60,13 @@ var Message = React.createClass({
           </div>
           <div className="col-xs-12">
             <div style={ this.styles.timestamp }>
-              <img src="./src/img/clock.png"/>
+              <img style={ this.styles.iconStyle } src="./src/img/clock.png"/>
               <span style={{fontStyle: "italic"}}>
                 { moment(this.props.timestamp).fromNow() }
               </span>
             </div>
             <div style={ this.styles.comments }>
-              <img src="./src/img/comments.png"/>
+              <img style={ this.styles.iconStyle } src="./src/img/comments.png"/>
               <span style={{fontStyle: "italic"}}> 24 comments </span>
             </div>
           </div>
@@ -92,6 +92,10 @@ var Message = React.createClass({
     },
     voteContainer: {
       width: "20px"
+    },
+    iconStyle: {
+      marginLeft: "5px",
+      marginRight: "5px",
     },
     arrows: {
       // float: "right"
